@@ -5,6 +5,7 @@
 # If there is a file-encoding cookie, Python will accept this. (2.x, too)
 # 18 December 2012 EH Added StrictDotDict which doesn't allow new keys.
 # 28 March 2013 EH PEP-8 compliance, requested by RackSpace
+# 30 October 2015 Unused argument (Pylint) fix from John Anderson, janderson@soltra
 """Simple Library to hold the DotDict class."""
 
 
@@ -39,6 +40,5 @@ class StrictDotDict(DotDict):
         else:
             raise KeyError
 
-    # Fails PyLint for unused arguments, but this is the API.
-    def __missing__(self, key):
+    def __missing__(self, *args, **kwargs):
         raise KeyError
