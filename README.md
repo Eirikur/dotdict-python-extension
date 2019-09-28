@@ -11,3 +11,6 @@ a = DotDict() ; a.foo.bar = 'content'
 
 Limitation: Expressing keys as attributes limits keys to valid Python
 identifiers.
+
+27 September 2019: New DotStore class adds simple persistence to a JSON file.
+
